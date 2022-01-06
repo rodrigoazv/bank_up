@@ -1,6 +1,7 @@
 FROM elixir:alpine
 
 RUN apk add --no-cache make gcc libc-dev
+RUN apk update && apk add inotify-tools
 
 WORKDIR /app
 
