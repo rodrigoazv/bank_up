@@ -11,7 +11,7 @@ defmodule BankUp.User do
 
   schema "users" do
     field :firstName, :string
-    field :lastName, :integer
+    field :lastName, :string
     field :cpf, :string
     field :password, :string, virtual: true
     field :password_hash, :string
