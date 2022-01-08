@@ -1,12 +1,12 @@
-defmodule BankUpWeb.UsersController do
+defmodule BankUpWeb.UserController do
   use BankUpWeb, :controller
 
-  alias BankUpWeb.User
+  alias BankUp.User
   def create(conn, params) do
-    with {:ok, %User{} = user} <- BankUpWeb.create_user(params) do
+    with {:ok, %User{} = user} <- BankUp.create_user(params) do
             conn
             |> put_status(:created)
-            |> render('jwt.json', %{user})
+            |> render('create.json', %{user: user})
           end
   end
 end

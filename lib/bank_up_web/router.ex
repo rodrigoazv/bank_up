@@ -1,6 +1,7 @@
 defmodule BankUpWeb.Router do
   use BankUpWeb, :router
 
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -8,7 +9,7 @@ defmodule BankUpWeb.Router do
   scope "/api", BankUpWeb do
     pipe_through :api
 
-    post "/user", UsersController, :create
+    post "/user", UserController, :create
   end
 
   # Other scopes may use custom stacks.

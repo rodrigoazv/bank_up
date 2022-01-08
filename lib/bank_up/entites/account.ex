@@ -1,9 +1,9 @@
-defmodule BankUpWeb.Account do
+defmodule BankUp.Account do
   use Ecto.Schema
 
   import Ecto.Changeset
 
-  alias BankUpWeb.User
+  alias BankUp.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
