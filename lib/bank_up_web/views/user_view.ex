@@ -1,13 +1,14 @@
 defmodule BankUpWeb.UserView do
+  use BankUpWeb, :view
 
   alias BankUp.User
 
-  def render("create.json", %{user: %User{id: id, firstName: name, nickname: nickname}}) do
+  def render("create.json", %{user: %User{id: id, firstName: firstName, nickname: nickname}}) do
     %{
       message: "User created",
       user: %{
         id: id,
-        name: name,
+        firstName: firstName,
         nickname: nickname
       }
     }
@@ -17,7 +18,5 @@ defmodule BankUpWeb.UserView do
     %{message: message}
   end
 
-  def render("upload.json", %{upload: upload}) do
-    %{upload: upload}
-  end
+
 end

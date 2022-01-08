@@ -9,6 +9,7 @@ defmodule BankUpWeb.Router do
   scope "/api", BankUpWeb do
     pipe_through :api
 
+    get "/", UserController, :index
     post "/user", UserController, :create
   end
 
