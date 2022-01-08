@@ -1,21 +1,23 @@
-defmodule BankUp.User do
+defmodule BankUpWeb.User do
   use Ecto.Schema
 
   import Ecto.Changeset
 
   alias Ecto.Changeset
+  alias BankUpWeb.Account
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:firstName, :lastName, :cpf, :password, :nickname]
 
-  schema "users" do
+  schema "user" do
     field :firstName, :string
     field :lastName, :string
     field :cpf, :string
     field :password, :string, virtual: true
     field :password_hash, :string
     field :nickname, :string
+    has_one :account, Account
 
     timestamps()
   end

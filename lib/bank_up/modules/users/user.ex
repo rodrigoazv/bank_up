@@ -1,4 +1,4 @@
-defmodule BankUp.User.Create do
+defmodule BankUpWeb.User.Create do
   def call(params) do
     {:ok, params}
   end
