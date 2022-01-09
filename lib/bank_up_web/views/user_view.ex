@@ -14,7 +14,11 @@ defmodule BankUpWeb.UserView do
     }
   end
 
-  def render("jwt.json", %{message: message}) do
+  def render("jwt.json", %{token: token}) do
+    %{token: token}
+  end
+
+  def render("default.json", %{message: message}) do
     %{message: message}
   end
 

@@ -39,6 +39,11 @@ config :esbuild,
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
+# Guardian config
+config :bankup, BankUp.Guardian,
+issuer: "bankup",
+secret_key: "key"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
