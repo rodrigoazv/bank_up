@@ -44,11 +44,14 @@ defmodule BankUp.MixProject do
       {:phoenix_live_dashboard, "~> 0.6"},
       {:esbuild, "~> 0.3", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
+      {:bcrypt_elixir, "~> 2.0"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:plug_cowboy, "~> 2.5"},
+      {:poison, "~> 5.0"}
     ]
   end
 
