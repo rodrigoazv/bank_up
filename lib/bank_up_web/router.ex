@@ -10,7 +10,7 @@ defmodule BankUpWeb.Router do
     pipe_through :api
 
     get "/", UserController, :index
-    post "/user", UserController, :create
+    post "/users", UserController, :create
   end
 
   # Other scopes may use custom stacks.

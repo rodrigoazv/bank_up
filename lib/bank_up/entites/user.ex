@@ -6,11 +6,9 @@ defmodule BankUp.User do
   alias Ecto.Changeset
   alias BankUp.Account
 
-  @primary_key {:id, :binary_id, autogenerate: true}
-
   @required_params [:firstName, :lastName, :cpf, :password, :nickname]
 
-  schema "user" do
+  schema "users" do
     field :firstName, :string
     field :lastName, :string
     field :cpf, :string
