@@ -47,6 +47,7 @@ defmodule BankUp.MixProject do
       {:bcrypt_elixir, "~> 2.0"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:guardian, "~> 2.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},

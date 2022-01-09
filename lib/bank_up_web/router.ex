@@ -11,6 +11,7 @@ defmodule BankUpWeb.Router do
 
     get "/", UserController, :index
     post "/users", UserController, :create
+    post "/users/sign_in", UserController, :sign_in
   end
 
   # Other scopes may use custom stacks.
