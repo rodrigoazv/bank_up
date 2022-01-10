@@ -5,7 +5,7 @@ config :bank_up, BankUp.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "postgres",
-  database: "bank_up",
+  database: "bank_up_db",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

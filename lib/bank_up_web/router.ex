@@ -1,9 +1,14 @@
 defmodule BankUpWeb.Router do
   use BankUpWeb, :router
 
+  import Plug.BasicAuth
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  pipeline :auth do
+    plug :basic_auth, Application.compile_env(:bank_up, :basic_auth)
   end
 
   scope "/api", BankUpWeb do
@@ -12,6 +17,14 @@ defmodule BankUpWeb.Router do
     get "/", UserController, :index
     post "/users", UserController, :create
     post "/users/sign_in", UserController, :sign_in
+  end
+
+  scope "/api/auth", BankUpWeb do
+    pipe_through [:api, :auth]
+
+    post "/account/:id/deposit", AccountController, :deposit
+    post "/account/:id/withdraw", AccountController, :withdraw
+    post "/account/transaction", AccountController, :transaction
   end
 
   # Other scopes may use custom stacks.
