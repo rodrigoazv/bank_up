@@ -13,9 +13,15 @@ config :bank_up,
 # Configures the endpoint
 config :bank_up, BankUpWeb.Endpoint,
   url: [host: "localhost"],
+  secret_key_base: "LYSUbqYgplOwL5ifYQoNejCuSriH86Pq4/D91TTqlp/Ipg5PaZGCIi5X29itiIRm",
   render_errors: [view: BankUpWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: BankUp.PubSub,
   live_view: [signing_salt: "6Cl7U02W"]
+
+#config auth
+config :bank_up, :basic_auth,
+  username: "local",
+  password: "local"
 
 # Configures the mailer
 #
@@ -41,8 +47,12 @@ config :esbuild,
 
 # Guardian config
 config :bankup, BankUp.Guardian,
-issuer: "bankup",
-secret_key: "key"
+  issuer: "bankup",
+  secret_key: "key"
+
+config :bank_up, BankUp.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
 
 # Configures Elixir's Logger
 config :logger, :console,
